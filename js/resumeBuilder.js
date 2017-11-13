@@ -36,33 +36,33 @@ var bio = {
 var work = {
   "jobs": [
     {
-      "employer": "Udacity",
-      "title": "Course Developer",
-      "location": "Mountain View, CA",
-      "dates": "Feb 2014 - Current",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    },
-    {
-      "employer": "LearnBIG",
+      "employer": "AT&T",
       "title": "Software Engineer",
-      "location": "Seattle, WA",
-      "dates": "May 2013 - Jan 2014",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+      "location": "Atlanta, GA",
+      "dates": "June 2014 - Current",
+      "description": "Apply the principles and techniques of computer science, engineering, and mathematical analysis to the design, development, testing, and evaluation of the software and the systems that enable computers to perform their many applications."
     },
     {
-      "employer": "LEAD Academy Charter High School",
-      "title": "Science Teacher",
-      "location": "Nashville, TN",
-      "dates": "Jul 2012 - May 2013",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    },
-    {
-      "employer": "Stratford High School",
-      "title": "Science Teacher",
-      "location": "Nashville, TN",
-      "dates": "Jun 2009 - Jun 2012",
-      "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+      "employer": "AT&T",
+      "title": "Software Intern",
+      "location": "Atlanta, GA",
+      "dates": "June 2013 - June 2014",
+      "description": "Apply the principles and techniques of computer science, engineering, and mathematical analysis to the design, development, testing, and evaluation of the software and the systems that enable computers to perform their many applications."
     }
+    // {
+    //   "employer": "LEAD Academy Charter High School",
+    //   "title": "Science Teacher",
+    //   "location": "Nashville, TN",
+    //   "dates": "Jul 2012 - May 2013",
+    //   "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    // },
+    // {
+    //   "employer": "Stratford High School",
+    //   "title": "Science Teacher",
+    //   "location": "Nashville, TN",
+    //   "dates": "Jun 2009 - Jun 2012",
+    //   "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
+    // }
   ]
 }
 
@@ -103,27 +103,27 @@ function displayWork() {
 
 displayWork();
 
-projects.display = function(){
-  for(project in projects.projects){
-    $("#projects").append(HTMLprojectStart);
-
-    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-    $(".project-entry:last").append(formattedTitle);
-
-    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-    $(".project-entry:last").append(formattedDates);
-
-    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-    $(".project-entry:last").append(formattedDescription);
-
-    if (projects.projects[project].images.length > 0) {
-      for(image in projects.projects[project].images){
-        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-        $(".project-entry:last").append(formattedImage);
-      }
-    }
-  }
-}
+// projects.display = function(){
+//   for(project in projects.projects){
+//     $("#projects").append(HTMLprojectStart);
+//
+//     var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+//     $(".project-entry:last").append(formattedTitle);
+//
+//     var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+//     $(".project-entry:last").append(formattedDates);
+//
+//     var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+//     $(".project-entry:last").append(formattedDescription);
+//
+//     if (projects.projects[project].images.length > 0) {
+//       for(image in projects.projects[project].images){
+//         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+//         $(".project-entry:last").append(formattedImage);
+//       }
+//     }
+//   }
+// }
 // //Collecting click locations
 // $(document).click(function(loc){
 //   var x = loc.pageX;
