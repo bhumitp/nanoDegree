@@ -27,8 +27,8 @@ var bio = {
     "twitter": "@bhumitp",
     "location": "Atlanta"
   },
-  "welcomeMessage": "Hello there!! welcome...",
-  "skills": ["awesomeness", "programming", "teaching", "JS"],
+  "welcomeMessage": "Hello there!! Welcome to my portfolio",
+  "skills": ["JAVA", "SQL", "HTML", "JS"],
   "bioPic": "images/fry.jpg"
 }
 
@@ -87,13 +87,11 @@ function displayBio() {
     $("#header").append(formattedPicture, formattedMessage, HTMLskillsStart);
 
     for(i = 0; i < bio.skills.length; i++){
-      var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
-      $("ul#skills").append(formattedSkills);
+      $("ul#skills").append(HTMLskills.replace("%data%", bio.skills[i]));
+      //$("ul#skills").append(formattedSkills);
     }
-
     $("ul#footerContacts").append(formattedMobile, formattedEmail, formattedGithub,
                                formattedTwitter, formattedLocation);;
-
 }
 
 //Work function
@@ -119,7 +117,7 @@ function displayWork() {
 }
 
 //Project Function
-function displayProjects(){
+projects.display = function () {
   for(project in projects.projects){
     $("#projects").append(HTMLprojectStart);
 
@@ -138,7 +136,7 @@ function displayProjects(){
         $(".project-entry:last").append(formattedImage);
       }
     }
-  }
+  };
 }
 
 //Education Function
@@ -167,7 +165,8 @@ function displayEducation() {
 
 //Calling all the functions
 displayWork();
-displayProjects();
+projects.display();
+//displayProjects();
 displayEducation();
 displayBio();
 
