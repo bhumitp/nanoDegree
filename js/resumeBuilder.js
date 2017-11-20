@@ -22,9 +22,9 @@ var bio = {
   "role": "Web Developer",
   "contacts": {
     "mobile": "650-555-5555",
-    "email": "john@example.com",
-    "github": "johndoe",
-    "twitter": "@johnDoe",
+    "email": "bhumitvpatel@gmail.com",
+    "github": "bhumitp",
+    "twitter": "@bhumitp",
     "location": "Atlanta"
   },
   "welcomeMessage": "Hello there!! welcome...",
@@ -69,13 +69,30 @@ var projects = {
 
 //Bio function
 function displayBio() {
-    //Adding name
+    //Adding name and role
     var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    $("#header").append(formattedName);
-
-    //Adding Role
     var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").append(formattedRole);
+    var formattedPicture = HTMLbioPic.replace("%data%", bio.bioPic);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+
+
+    $("#header").prepend(formattedName, formattedRole);
+    $("ul#topContacts").append(formattedMobile, formattedEmail, formattedGithub,
+                               formattedTwitter, formattedLocation);
+    $("#header").append(formattedPicture, formattedMessage, HTMLskillsStart);
+
+    for(i = 0; i < bio.skills.length; i++){
+      var formattedSkills = HTMLskills.replace("%data%", bio.skills[i]);
+      $("ul#skills").append(formattedSkills);
+    }
+
+    $("ul#footerContacts").append(formattedMobile, formattedEmail, formattedGithub,
+                               formattedTwitter, formattedLocation);;
 
 }
 

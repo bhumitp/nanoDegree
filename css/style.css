@@ -1,14 +1,4 @@
-body,
-div,
-ul,
-li,
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+body, div, ul, li, p, h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -18,9 +8,7 @@ h6 {
   overflow: auto;
 }
 
-.education-entry,
-.work-entry,
-.project-entry {
+.education-entry, .work-entry, .project-entry {
   padding: 0 5%;
 }
 
@@ -53,14 +41,9 @@ h4 {
   line-height: 17px;
 }
 
-h2,
-h3,
-h4,
-h5 {
+h2, h3, h4, h5 {
   padding: 10px 5%;
-
 }
-
 
 .date-text {
   font-style: italic;
@@ -76,7 +59,6 @@ h5 {
   color: #999;
   line-height: 16px;
   float: right;
-
 }
 
 p {
@@ -128,6 +110,7 @@ a {
 }
 
 /* TODO: Replace with image later */
+
 #header {
   background-color: #484848;
 }
@@ -214,8 +197,7 @@ span {
 }
 
 @media only screen and (min-width: 750px) {
-  #skills-h3,
-  .biopic {
+  #skills-h3, .biopic {
     display: block;
   }
 }
