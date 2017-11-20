@@ -1,11 +1,11 @@
 //Education Object
 var education = {
   "schools": [{
-    "name": "KSU",
+    "name": "Kennesaw State University",
     "city": "Marietta, GA",
     "degree": "BS",
-    "major": "CompSci",
-    "dates": 2013,
+    "major": "Computer Science",
+    "dates": "2009 - 2014",
     "url": "http://www.ksu.edu"
   }],
   "onlineCourses": [{
@@ -49,20 +49,6 @@ var work = {
       "dates": "June 2013 - June 2014",
       "description": "Apply the principles and techniques of computer science, engineering, and mathematical analysis to the design, development, testing, and evaluation of the software and the systems that enable computers to perform their many applications."
     }
-    // {
-    //   "employer": "LEAD Academy Charter High School",
-    //   "title": "Science Teacher",
-    //   "location": "Nashville, TN",
-    //   "dates": "Jul 2012 - May 2013",
-    //   "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    // },
-    // {
-    //   "employer": "Stratford High School",
-    //   "title": "Science Teacher",
-    //   "location": "Nashville, TN",
-    //   "dates": "Jun 2009 - Jun 2012",
-    //   "description": "Who moved my cheese cheesy feet cauliflower cheese. Queso taleggio when the cheese comes out everybody's happy airedale ricotta cheese and wine paneer camembert de normandie. Swiss mozzarella cheese slices feta fromage frais airedale swiss cheesecake. Hard cheese blue castello halloumi parmesan say cheese stinking bishop jarlsberg."
-    // }
   ]
 }
 
@@ -71,7 +57,7 @@ var projects = {
   "projects": [{
     "title": "Sample project",
     "dates": "2014",
-    "description": "Did prject for school assignment",
+    "description": "Did project for school assignment",
     "images": [
       "https://www.google.com",
       "https://www.yahoo.com"
@@ -80,6 +66,20 @@ var projects = {
 }
 
 //Adding code for template
+
+//Bio function
+function displayBio() {
+    //Adding name
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $("#header").append(formattedName);
+
+    //Adding Role
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $("#header").append(formattedRole);
+
+}
+
+//Work function
 function displayWork() {
   for (job in work.jobs) {
     //Adding work experience
@@ -101,29 +101,62 @@ function displayWork() {
   }
 }
 
-displayWork();
+//Project Function
+function displayProjects(){
+  for(project in projects.projects){
+    $("#projects").append(HTMLprojectStart);
 
-// projects.display = function(){
-//   for(project in projects.projects){
-//     $("#projects").append(HTMLprojectStart);
-//
-//     var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-//     $(".project-entry:last").append(formattedTitle);
-//
-//     var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-//     $(".project-entry:last").append(formattedDates);
-//
-//     var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-//     $(".project-entry:last").append(formattedDescription);
-//
-//     if (projects.projects[project].images.length > 0) {
-//       for(image in projects.projects[project].images){
-//         var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-//         $(".project-entry:last").append(formattedImage);
-//       }
-//     }
-//   }
-// }
+    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+    $(".project-entry:last").append(formattedTitle);
+
+    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+    $(".project-entry:last").append(formattedDates);
+
+    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+    $(".project-entry:last").append(formattedDescription);
+
+    if (projects.projects[project].images.length > 0) {
+      for(image in projects.projects[project].images){
+        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+        $(".project-entry:last").append(formattedImage);
+      }
+    }
+  }
+}
+
+//Education Function
+function displayEducation() {
+  for (school in education.schools) {
+    //Adding work experience
+    $("#education").append(HTMLschoolStart);
+
+    //Formatting school
+    var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
+    $(".education-entry:last").append(formattedSchool);
+
+    //Formatting Dates
+    var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+    $(".education-entry:last").append(formattedDates);
+
+    //Formatting Major
+    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+    $(".education-entry:last").append(formattedMajor);
+
+    //Formatting Location
+    var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+    $(".education-entry:last").append(formattedCity);
+  }
+}
+
+//Calling all the functions
+displayWork();
+displayProjects();
+displayEducation();
+displayBio();
+
+
+
+
 // //Collecting click locations
 // $(document).click(function(loc){
 //   var x = loc.pageX;
