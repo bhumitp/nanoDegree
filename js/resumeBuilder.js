@@ -57,14 +57,14 @@ var projects = {
     "title": "Sample project",
     "dates": "2014",
     "description": "Did project for school assignment",
-    "images": [
-      "https://www.google.com",
-      "https://www.yahoo.com"
-    ]
+    "images": ["images/project1.jpg"],
+            "url": "http://google.com/"
   }]
 }
 
 //Adding code for template
+
+// Added encapsulation in one of the functions. I wanted to try out both so kept both ways in here
 
 //Bio function
 function displayBio() {
