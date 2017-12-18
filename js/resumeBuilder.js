@@ -159,8 +159,10 @@ function displayEducation() {
     //Formatting Location
     var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
     $(".education-entry:last").append(formattedCity);
+    $("mapDiv").append(googleMap);
   }
 }
+
 
 //Calling all the functions
 displayWork();
