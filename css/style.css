@@ -1,7 +1,7 @@
 body, div, ul, li, p, h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
-  font-family: "Roboto", sans-serif;
+  font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
 .clear-fix {
@@ -14,7 +14,7 @@ body, div, ul, li, p, h1, h2, h3, h4, h5, h6 {
 
 h1 {
   font-size: 40px;
-  color: #f5a623;
+  color: #FF5733;
   line-height: 48px;
   display: inline;
 }
