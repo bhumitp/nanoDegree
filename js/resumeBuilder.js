@@ -185,7 +185,6 @@ education.display = function() {
   }
 }
 
-
 //Calling all the functions
 work.display();
 projects.display();
