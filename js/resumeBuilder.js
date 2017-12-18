@@ -22,7 +22,7 @@ var bio = {
   "role": "Web Developer",
   "contacts": {
     "mobile": "650-555-5555",
-    "email": "bhumitvpatel@gmail.com",
+    "email": "bhumit@gmail.com",
     "github": "bhumitp",
     "twitter": "@bhumitp",
     "location": "Atlanta"
