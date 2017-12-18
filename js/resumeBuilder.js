@@ -2,16 +2,16 @@
 var education = {
   "schools": [{
     "name": "Kennesaw State University",
-    "city": "Marietta, GA",
+    "location": "Marietta, GA",
     "degree": "BS",
-    "major": "Computer Science",
+    "majors": ["Computer Science"],
     "dates": "2009 - 2014",
     "url": "http://www.ksu.edu"
   }],
   "onlineCourses": [{
     "title": "JavaScript Crash Course",
     "school": "udacity",
-    "dates": 2014,
+    "dates": "2014",
     "url": "http://www.udacity.com/course/ud804"
   }]
 }
@@ -29,7 +29,7 @@ var bio = {
   },
   "welcomeMessage": "Hello there!! Welcome to my portfolio",
   "skills": ["JAVA", "SQL", "HTML", "JS"],
-  "bioPic": "images/fry.jpg"
+  "biopic": "images/fry.jpg"
 }
 
 //work Object
@@ -67,11 +67,11 @@ var projects = {
 // Added encapsulation in one of the functions. I wanted to try out both so kept both ways in here
 
 //Bio function
-function displayBio() {
+bio.display = function(){
   //Adding name and role
   var formattedName = HTMLheaderName.replace("%data%", bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-  var formattedPicture = HTMLbioPic.replace("%data%", bio.bioPic);
+  var formattedPicture = HTMLbioPic.replace("%data%", bio.biopic);
   var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
   var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
   var formattedGithub = HTMLgithub.replace("%data%", bio.contacts.github);
@@ -94,82 +94,100 @@ function displayBio() {
 }
 
 //Work function
-function displayWork() {
-  for (job in work.jobs) {
-    //Adding work experience
-    $("#workExperience").append(HTMLworkStart);
+work.display = function() {
+  if (work.jobs.length > 0) {
+        $("#workExperience").append(HTMLworkStart);
+        for (i in work.jobs) {
+          //Formatting work Object
+            var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[i].employer);
+            var formattedWorkTitle = HTMLworkTitle.replace("%data%", work.jobs[i].title);
+            var formattedWorkLocation = HTMLworkLocation.replace("%data%", work.jobs[i].location);
+            var formattedDatesWorked = HTMLworkDates.replace("%data%", work.jobs[i].dates);
+            var formattedWorkDescription = HTMLworkDescription.replace("%data%", work.jobs[i].description);
 
-    //Formatting work experience and title
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
+            //Adding employer and title
+            var formattedEmployerWorkTitle = formattedEmployer + formattedWorkTitle;
 
-    //Formatting dates
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    $(".work-entry:last").append(formattedDates);
-
-    //Formatting description
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-    $(".work-entry:last").append(formattedDescription);
-  }
+            //Appending to work object
+            $(".work-entry:last").append(formattedEmployerWorkTitle);
+            $(".work-entry:last").append(formattedWorkLocation);
+            $(".work-entry:last").append(formattedDatesWorked);
+            $(".work-entry:last").append(formattedWorkDescription);
+        }
+    }
 }
 
 //Project Function
 projects.display = function() {
-  for (project in projects.projects) {
-    $("#projects").append(HTMLprojectStart);
+  if (projects.projects.length > 0) {
+      for (i in projects.projects) {
+          $("#projects").append(HTMLprojectStart);
 
-    var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-    $(".project-entry:last").append(formattedTitle);
+          var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[i].title).replace("#", projects.projects[i].url);
+          $(".project-entry:last").append(formattedTitle);
 
-    var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
-    $(".project-entry:last").append(formattedDates);
+          var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[i].dates);
+          $(".project-entry:last").append(formattedDates);
 
-    var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-    $(".project-entry:last").append(formattedDescription);
+          var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[i].description);
+          $(".project-entry:last").append(formattedDescription);
 
-    if (projects.projects[project].images.length > 0) {
-      for (image in projects.projects[project].images) {
-        var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
-        $(".project-entry:last").append(formattedImage);
+          for (var images in projects.projects[i].images) {
+              var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[i].images[images]);
+              $(".project-entry:last").append(formattedImage);
+          }
       }
-    }
-  };
-}
+  }
+};
 
 //Education Function
-function displayEducation() {
-  for (school in education.schools) {
+education.display = function() {
+  if (education.schools.length > 0 || education.onlineCourses.length > 0) {
+         for (i in education.schools) {
     //Adding work experience
     $("#education").append(HTMLschoolStart);
 
     //Formatting school
-    var formattedSchool = HTMLschoolName.replace("%data%", education.schools[school].name);
-    $(".education-entry:last").append(formattedSchool);
+    var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[i].name).replace("#", education.schools[i].url);
+    var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[i].degree);
+    $(".education-entry:last").append(formattedSchoolName + formattedSchoolDegree);
 
-    //Formatting Dates
-    var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-    $(".education-entry:last").append(formattedDates);
+     //Formatting Dates
+     var formattedDates = HTMLschoolDates.replace("%data%", education.schools[i].dates);
+     $(".education-entry:last").append(formattedDates);
 
-    //Formatting Major
-    var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-    $(".education-entry:last").append(formattedMajor);
+     //Formatting Major
+     var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[i].majors);
+     $(".education-entry:last").append(formattedMajor);
 
     //Formatting Location
-    var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+    var formattedCity = HTMLschoolLocation.replace("%data%", education.schools[i].location);
     $(".education-entry:last").append(formattedCity);
-    $("mapDiv").append(googleMap);
+
+    //Formatting Online onlineCourses
+    if (education.onlineCourses.length > 0) {
+            $("#education").append(HTMLonlineClasses);
+            for (i in education.onlineCourses) {
+                $("#education").append(HTMLschoolStart);
+                var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[i].title).replace("#", education.onlineCourses[i].url);
+                var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[i].school);
+                var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[i].dates);
+                var formattedOnlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[i].url).replace("#", education.onlineCourses[i].url);
+                $(".education-entry:last").append(formattedOnlineTitle + formattedOnlineSchool);
+                $(".education-entry:last").append(formattedOnlineDates);
+                $(".education-entry:last").append(formattedOnlineURL);
+              }
+          }
+      }
+    }
   }
-}
 
 
 //Calling all the functions
-displayWork();
+work.display();
 projects.display();
-//displayProjects();
-displayEducation();
-displayBio();
+education.display();
+bio.display();
 
 
 
