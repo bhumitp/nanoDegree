@@ -123,7 +123,7 @@ projects.display = function(){
       }
     }
   }
-}
+};
 // //Collecting click locations
 // $(document).click(function(loc){
 //   var x = loc.pageX;
