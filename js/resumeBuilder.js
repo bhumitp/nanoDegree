@@ -58,7 +58,7 @@ var projects = {
     "dates": "2014",
     "description": "Did project for school assignment",
     "images": ["images/project1.jpg"],
-            "url": "http://google.com/"
+    "url": "http://google.com/"
   }]
 }
 
