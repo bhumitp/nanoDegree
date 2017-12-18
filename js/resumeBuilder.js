@@ -189,24 +189,5 @@ projects.display();
 education.display();
 bio.display();
 
-
-
-
-// //Collecting click locations
-// $(document).click(function(loc){
-//   var x = loc.pageX;
-//   var y = loc.pageY;
-//
-//   logClicks(x,y);
-// });
-//
-// function locationizer(work_obj){
-//   var locationArray = [];
-//
-//   for (job in work_obj.jobs){
-//     var newLocation = work_obj.jobs[job].location;
-//     locationArray.push(newLocation);
-//   }
-//   return locationArray;
-// }
-// console.log(locationizer(work));
+//Adding google map
+$("#mapDiv").append(googleMap);
