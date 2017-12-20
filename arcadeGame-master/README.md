@@ -11,10 +11,10 @@ Running the game:
 Please download the folder and simply open the index.html file and enjoy playing.
 
 Movements:
-UP Arrow Key / W - Up Movement
-Down Arrow Key / S - Down Movement
-Left Arrow Key / A - Left Movement
-Right Arrow Key / D - Right Movement
+*UP Arrow Key / W - Up Movement
+*Down Arrow Key / S - Down Movement
+*Left Arrow Key / A - Left Movement
+*Right Arrow Key / D - Right Movement
 
 
 **Please provide any feedback to improve the game or feel free to contribute to it.**
