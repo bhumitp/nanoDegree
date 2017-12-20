@@ -55,22 +55,6 @@ Player.prototype.update = function(dt) {
   // Prevent player from going out of canvas
   var playerCheck = this;
 
-  //Left movement
-  if (this.pressedKey === 'left' && this.x > 0) {
-    this.x = this.x - 100;
-  }
-  if (this.pressedKey === 'keyA' && this.y > 0) {
-    this.x = this.x - 100;
-  }
-
-  //right movement
-  if (this.pressedKey === 'right' && this.x < 400) {
-    this.x = this.x + 100;
-  }
-  if (this.pressedKey === 'keyD' && this.x < 400) {
-    this.x = this.x + 100;
-  }
-
   //Up movement
   if (this.pressedKey === 'up' && this.y > 0) {
     this.y = this.y - 90;
@@ -79,7 +63,7 @@ Player.prototype.update = function(dt) {
     this.y = this.y - 90;
   }
 
-  //Dowm movement
+  //Down movement
   if (this.pressedKey === 'down' && this.y < 400) {
     this.y = this.y + 90;
   }
@@ -87,7 +71,23 @@ Player.prototype.update = function(dt) {
     this.y = this.y + 90;
   }
 
-  //Movement of player - one spot at a time
+  //Left movement
+  if (this.pressedKey === 'left' && this.x > 0) {
+    this.x = this.x - 100;
+  }
+  if (this.pressedKey === 'keyA' && this.y > 0) {
+    this.x = this.x - 100;
+  }
+
+  //Right movement
+  if (this.pressedKey === 'right' && this.x < 400) {
+    this.x = this.x + 100;
+  }
+  if (this.pressedKey === 'keyD' && this.x < 400) {
+    this.x = this.x + 100;
+  }
+
+//Movement of player - one spot at a time
   this.pressedKey = null;
 
   //Reset position
@@ -109,9 +109,10 @@ Player.prototype.update = function(dt) {
 };
 
 Player.prototype.render = function() {
-  ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+  ctx.drawImage(Resources.get(this.sprite), this.x, this.y); // draws image
 };
 
+//Handling input
 Player.prototype.handleInput = function(e) {
   this.pressedKey = e;
 };
@@ -135,47 +136,6 @@ var allEnemies = [];
 }());
 
 var player = new Player();
-
-
-
-function JSconfirm(){
-
-swal({   title: "Your account will be deleted permanently!",
-
-text: "Are you sure to proceed?",
-
-type: "warning",
-
-showCancelButton: true,
-
-confirmButtonColor: "#DD6B55",
-
-confirmButtonText: "Yes, Remove My Account!",
-
-cancelButtonText: "No, I am not sure!",
-
-closeOnConfirm: false,
-
-closeOnCancel: false },
-
-function(isConfirm){
-
-if (isConfirm)
-
-{
-
-swal("Account Removed!", "Your account is removed permanently!", "success");
-
-}
-
-else {
-
-swal("Hurray", "Account is not removed!", "error");
-
-} });
-
-}
-
 
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
