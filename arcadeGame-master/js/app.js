@@ -137,6 +137,46 @@ var allEnemies = [];
 var player = new Player();
 
 
+
+function JSconfirm(){
+
+swal({   title: "Your account will be deleted permanently!",
+
+text: "Are you sure to proceed?",
+
+type: "warning",
+
+showCancelButton: true,
+
+confirmButtonColor: "#DD6B55",
+
+confirmButtonText: "Yes, Remove My Account!",
+
+cancelButtonText: "No, I am not sure!",
+
+closeOnConfirm: false,
+
+closeOnCancel: false },
+
+function(isConfirm){
+
+if (isConfirm)
+
+{
+
+swal("Account Removed!", "Your account is removed permanently!", "success");
+
+}
+
+else {
+
+swal("Hurray", "Account is not removed!", "error");
+
+} });
+
+}
+
+
 // This listens for key presses and sends the keys to your
 // Player.handleInput() method. You don't need to modify this.
 document.addEventListener('keyup', function(e) {
