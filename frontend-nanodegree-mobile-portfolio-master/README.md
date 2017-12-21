@@ -14,6 +14,7 @@ Created variables outside the for loop so they can be used globally.
 After researching on querySelector vs getElementById vs getElementsByClassName, I decided not to use querySelector as it slows down the performance [http://ryanmorr.com/abstract-away-the-performance-faults-of-queryselectorall/]
 
 I also optimized one of the pizzeria image
+
 Also added a dynamic way to calculate number of pizza which was hard coded first.
 
 **Below links given for help were very useful**
