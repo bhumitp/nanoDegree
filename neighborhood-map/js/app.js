@@ -12,19 +12,27 @@ function initMap() {
     center: coordinates
   });
 
-  // Adding starting Marker
-  var marker = new google.maps.Marker({
-    position: coordinates,
-    map: map
-  });
-
-  //Adding info when you click the marker
-  var infoWindow = new google.maps.InfoWindow({
-    content:'<h1>Atlanta</h1>'
-  });
-
-  //Adding listener to pop up info on click
-  marker.addListener('click', function(){
-    infoWindow.open(map, marker);
-  });
+  // // Adding starting Marker
+  // var marker = new google.maps.Marker({
+  //   position: coordinates,
+  //   map: map
+  // });
+  //
+  // //Adding info when you click the marker
+  // var infoWindow = new google.maps.InfoWindow({
+  //   content:'<h1>Atlanta</h1>'
+  // });
+  //
+  // //Adding listener to pop up info on click
+  // marker.addListener('click', function(){
+  //   infoWindow.open(map, marker);
+  // });
+  addMarker(coordinates);
+  //Add marker
+  function addMarker(coordinates){
+    var marker = new google.maps.Marker({
+      position: coordinates,
+      map: map
+    });
+  }
 }
