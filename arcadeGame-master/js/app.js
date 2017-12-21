@@ -25,7 +25,7 @@ Enemy.prototype.update = function(dt) {
   if (this.x <= 505) { //canvas.width = 505
     this.x = this.x + this.speed * dt;
   } else {
-    this.x = -2;
+    this.x = -10;
   }
 };
 
