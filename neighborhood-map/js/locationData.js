@@ -1,3 +1,4 @@
+//setting up locations
 var myLocations = [
     {
         title: 'Fox Theatre',
