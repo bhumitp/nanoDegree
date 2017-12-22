@@ -1,0 +1,40 @@
+this.initMap = function() {
+
+  //Setting height for the map and side bar
+  windowHeight = $(window).innerHeight();
+  $('#map').css('min-height', windowHeight);
+  $('#sidebar').css('min-height', windowHeight);
+
+  //Map Options - Setting it to atlanta by default
+   coordinates = {
+    lat: 33.7490,
+    lng: -84.3880
+  };
+
+  //Drawing New Map
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: coordinates
+  });
+
+  //Iterating to the locations array from marker.js file
+  for (var i = 0; i < locations.length; i++) {
+    //Getting the title
+    this.markerTitle = locations[i].title;
+    //Getting latitude
+    this.markerLat = locations[i].lat;
+    //Getting longitude
+    this.markerLng = locations[i].lng;
+
+    //Getting the type
+    this.markerType = locations[i].type;
+    //Drawing that on the map
+    var marker = new google.maps.Marker({
+      position: {
+        lat: this.markerLat,
+        lng: this.markerLng
+      },
+      map: map
+    });
+  }
+}
