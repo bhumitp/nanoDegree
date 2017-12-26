@@ -76,9 +76,8 @@ function AppViewModel() {
       $('#sidebar').css('min-height', windowHeight);
         var mapCanvas = document.getElementById('map');
         var mapOptions = {
-            center: new google.maps.LatLng(51.4980479, -0.0105351),
-            zoom: 15,
-            //styles: styles
+            center: new google.maps.LatLng(33.7490, -84.3880),
+            zoom: 10,
         };
         // Constructor creates a new map - only center and zoom are required.
         map = new google.maps.Map(mapCanvas, mapOptions);
