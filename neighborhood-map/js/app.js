@@ -36,10 +36,10 @@ function viewModel() {
     var mapDraw = document.getElementById('map');
     var mapOptions = {
       center: new google.maps.LatLng(coordinates),
-      zoom: 10,
+      zoom: 11,
     };
 
-    // Constructor creates a new map - only center and zoom are required.
+    // Creating a map constructor
     map = new google.maps.Map(mapDraw, mapOptions);
 
     // Setting the information window
@@ -69,8 +69,6 @@ function viewModel() {
       this.marker.addListener('click', plot.populateAndBounceMarker);
     }
   }; //End of initMap
-
-
 
   // Populating the information window on click
   this.populateInfoWindow = function(marker, infowindow) {
@@ -150,7 +148,6 @@ function viewModel() {
 googleError = function googleError() {
   alert('There was an issue with Google Maps API. Please try again later');
 }; //End of googleError function
-
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
