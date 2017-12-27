@@ -4,7 +4,10 @@
 var map;
 
 //Default coordinates for Atlanta
-var coordinates = {lat:33.7490, lng:-84.3880}
+var coordinates = {
+  lat: 33.7490,
+  lng: -84.3880
+}
 
 //Needed for Foursquare API call
 var clientID = "SDAWFJVJMXDH011Q0JCQLB54FG4H232CSMAXO4HAJBC0KQYO";
@@ -84,10 +87,10 @@ function viewModel() {
 
       //Extracting data from the API response
       $.getJSON(url).done(function(marker) {
-        var response = marker.response.venues[0];  //Gets entire response
-        plot.street = response.location.formattedAddress[0];  //Get Street
-        plot.city = response.location.formattedAddress[1];    //Get City
-        plot.category = response.categories[0].shortName;     //Get Category
+        var response = marker.response.venues[0]; //Gets entire response
+        plot.street = response.location.formattedAddress[0]; //Get Street
+        plot.city = response.location.formattedAddress[1]; //Get City
+        plot.category = response.categories[0].shortName; //Get Category
 
         //Formatting content for information window
         plot.htmlContentFoursquare =
