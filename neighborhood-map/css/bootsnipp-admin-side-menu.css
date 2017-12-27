@@ -8,10 +8,12 @@ Made several modifications to make this work for my project.
 :focus {
   outline: none;
 }
+
 .row {
   margin-right: 0;
   margin-left: 0;
 }
+
 /*
     Sometimes the sub menus get too large for the page and prevent the menu from scrolling, limiting functionality
     A quick fix is to change .side-menu to
@@ -28,6 +30,7 @@ Made several modifications to make this work for my project.
     If you want to make it really neat i suggest you look into an alternative like http://areaaperta.com/nicescroll/
     This will allow the menu to say fixed on body scoll and scoll on the side bar if it get to large
 */
+
 /*.absolute-wrapper{
     position: fixed;
     width: 300px;
@@ -43,29 +46,36 @@ Made several modifications to make this work for my project.
   background-color: #f8f8f8;
   border-right: 1px solid #e7e7e7;
 }
+
 .side-menu .navbar {
   border: none;
 }
+
 .side-menu .navbar-header {
   width: 100%;
   border-bottom: 1px solid #e7e7e7;
 }
+
 .side-menu .navbar-nav .active a {
   background-color: transparent;
   margin-right: -1px;
   border-right: 5px solid #e7e7e7;
 }
+
 .side-menu .navbar-nav li {
   display: block;
   width: 100%;
   border-bottom: 1px solid #e7e7e7;
 }
+
 .side-menu .navbar-nav li a {
   padding: 5px 15px 5px 15px;
 }
+
 .side-menu .navbar-nav li a .glyphicon {
   padding-right: 10px;
 }
+
 .side-menu #dropdown {
   border: 0;
   margin-bottom: 0;
@@ -73,43 +83,55 @@ Made several modifications to make this work for my project.
   background-color: transparent;
   box-shadow: none;
 }
+
 .side-menu #dropdown .caret {
   float: right;
   margin: 9px 5px 0;
 }
+
 .side-menu #dropdown .indicator {
   float: right;
 }
-.side-menu #dropdown > a {
+
+.side-menu #dropdown>a {
   border-bottom: 1px solid #e7e7e7;
 }
+
 .side-menu #dropdown .panel-body {
   padding: 0;
   background-color: #f3f3f3;
 }
+
 .side-menu #dropdown .panel-body .navbar-nav {
   width: 100%;
 }
+
 .side-menu #dropdown .panel-body .navbar-nav li {
   padding-left: 15px;
   border-bottom: 1px solid #e7e7e7;
 }
+
 .side-menu #dropdown .panel-body .navbar-nav li:last-child {
   border-bottom: none;
 }
-.side-menu #dropdown .panel-body .panel > a {
+
+.side-menu #dropdown .panel-body .panel>a {
   margin-left: -20px;
   padding-left: 35px;
 }
+
 .side-menu #dropdown .panel-body .panel-body {
   margin-left: -15px;
 }
+
 .side-menu #dropdown .panel-body .panel-body li {
   padding-left: 30px;
 }
+
 .side-menu #dropdown .panel-body .panel-body li:last-child {
   border-bottom: 1px solid #e7e7e7;
 }
+
 .side-menu #search-trigger {
   background-color: #f3f3f3;
   border: 0;
@@ -119,19 +141,24 @@ Made several modifications to make this work for my project.
   right: 0;
   padding: 15px 18px;
 }
+
 .side-menu .brand-name-wrapper {
   min-height: 50px;
 }
+
 .side-menu .brand-name-wrapper .navbar-brand {
   display: block;
 }
+
 .side-menu #search {
   position: relative;
   z-index: 1000;
 }
+
 .side-menu #search .panel-body {
   padding: 0;
 }
+
 .side-menu #search .panel-body .navbar-form {
   padding: 0;
   padding-right: 50px;
@@ -140,10 +167,12 @@ Made several modifications to make this work for my project.
   position: relative;
   border-top: 1px solid #e7e7e7;
 }
+
 .side-menu #search .panel-body .navbar-form .form-group {
   width: 100%;
   position: relative;
 }
+
 .side-menu #search .panel-body .navbar-form input {
   border: 0;
   border-radius: 0;
@@ -151,6 +180,7 @@ Made several modifications to make this work for my project.
   width: 100%;
   height: 50px;
 }
+
 .side-menu #search .panel-body .navbar-form .btn {
   position: absolute;
   right: 0;
@@ -160,12 +190,16 @@ Made several modifications to make this work for my project.
   background-color: #f3f3f3;
   padding: 15px 18px;
 }
+
 /* Main body section */
+
 .side-body {
   height: 100%;
   margin-left: 300px;
 }
+
 /* small screen */
+
 @media (max-width: 768px) {
   .side-menu {
     position: relative;
@@ -228,7 +262,7 @@ Made several modifications to make this work for my project.
   }
   /* Slide side menu*/
   /* Add .absolute-wrapper.slide-in for scrollable menu -> see top comment */
-  .side-menu-container > .navbar-nav.slide-in {
+  .side-menu-container>.navbar-nav.slide-in {
     -moz-animation: slidein 200ms forwards;
     -o-animation: slidein 200ms forwards;
     -webkit-animation: slidein 200ms forwards;
@@ -236,7 +270,7 @@ Made several modifications to make this work for my project.
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  .side-menu-container > .navbar-nav {
+  .side-menu-container>.navbar-nav {
     /* Add position:absolute for scrollable menu -> see top comment */
     position: fixed;
     left: -200px;
