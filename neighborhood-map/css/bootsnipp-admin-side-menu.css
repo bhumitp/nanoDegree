@@ -287,3 +287,7 @@
     border-radius: 0;
     background-color: #f3f3f3;
   }
+  #dropdown .panel-body .navbar-nav {
+    margin: 0;
+  }
+}
