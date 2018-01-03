@@ -22,3 +22,4 @@ Click on the attraction from the nav bar to pull up the information for that att
 [https://hpneo.github.io/gmaps/examples/json.html]
 [https://stackoverflow.com/questions/42824881/i-am-trying-to-implement-foursquare-api-in-my-web-page-while-the-data-seems-to]
 [http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html]
+[https://www.w3schools.com/cssref/css3_pr_mediaquery.asp]
