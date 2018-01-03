@@ -22,6 +22,7 @@ $(function() {
      * page?
      */
     it('are defined', function() {
+      //checking if feeds are defined and not empty
       expect(allFeeds).toBeDefined();
       expect(allFeeds.length).not.toBe(0);
     });
@@ -66,6 +67,7 @@ $(function() {
      * should have two expectations: does the menu display when
      * clicked and does it hide when clicked again.
      */
+    //checking if menu hides/shows when click function is called
     it('menu changes visibility', function() {
       $('.menu-icon-link').click();
       expect($('body').hasClass('menu-hidden')).toBe(false);
@@ -102,6 +104,7 @@ $(function() {
    var old_feed;
    beforeEach(function(done){
      loadFeed(0, function(){
+       //saving feed in variable
        old_feed = $('.feed').html();
        //loading new feed
        loadFeed(1, done);
