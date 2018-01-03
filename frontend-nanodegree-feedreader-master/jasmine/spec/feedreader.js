@@ -103,6 +103,7 @@ $(function() {
    beforeEach(function(done){
      loadFeed(0, function(){
        old_feed = $('.feed').html();
+       //loading new feed
        loadFeed(1, done);
      });
    });
