@@ -21,3 +21,4 @@ Click on the attraction from the nav bar to pull up the information for that att
 [http://tether.io/]
 [https://hpneo.github.io/gmaps/examples/json.html]
 [https://stackoverflow.com/questions/42824881/i-am-trying-to-implement-foursquare-api-in-my-web-page-while-the-data-seems-to]
+[http://www.knockmeout.net/2011/04/utility-functions-in-knockoutjs.html]

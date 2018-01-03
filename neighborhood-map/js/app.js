@@ -26,6 +26,8 @@ function drawMap() {
 function viewModel() {
   //Initializing the plot variable
   var plot = this;
+
+  this.markers = [];
   //Calling initMap - sets up screen size and default markers
   this.initMap = function() {
 
